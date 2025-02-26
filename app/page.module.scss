@@ -1,0 +1,26 @@
+.maskBody {
+  position: relative;
+
+  .mask {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    pointer-events: auto;
+    transition: color 0.3s ease; // Add smooth transition for color change
+  }
+}
+
+.maskBox {
+  position: fixed;
+  background: #ff432a;
+  border-radius: 50%;
+  pointer-events: none;
+  mask-image: url("../public/mask.svg");
+  mask-repeat: no-repeat;
+  mask-size: cover;
+
+  // When hovering over .maskBox, target the text color inside .mask
+  &:hover + .maskBody .mask p {
+    color: black; // Change text color to black when hovering on maskBox
+  }
+}
